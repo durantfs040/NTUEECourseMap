@@ -1,4 +1,12 @@
-const CourseCard = () => {
+type CourseCardProps = {
+    title: string;
+    instructor: string;
+    rating: number;
+    semester: string;
+};
+
+const CourseCard = ({title, instructor, rating, semester} : CourseCardProps) => {
+    
     return (
         <div>
             <div className="course-card rounded-lg">
@@ -10,13 +18,16 @@ const CourseCard = () => {
                 />
                 <div className="bg-transparent m-2">
                     <div className="font-bold">
-                        {`title instructor`}
+                        {title}
+                    </div>
+                    <div className="font-bold">
+                        {instructor}
                     </div>
                     <div>
-                        rating
+                        {`${rating} ⭐`}
                     </div>
                     <div>
-                        {`semester`}
+                        {semester}
                     </div>
                     <div>
                         ...
